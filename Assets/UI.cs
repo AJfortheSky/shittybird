@@ -9,22 +9,23 @@ using UnityEngine.SocialPlatforms.Impl;
 public class UI : MonoBehaviour
 {
     public Text scoreUI;
-    private int score = 0;
-    
+    public static int score = 0;
+    public static GameObject gameOverScreen;
     void Start()
     {
         scoreUI.text = $"Score: {score}";
+        gameOverScreen.SetActive(true);
     }
     
     
-    public void updateScore()
+    public static void updateScore()
     {
         score += 1;
     }
 
-    public void gameOver()
+    public static void gameOver()
     {
-        
+        gameOverScreen.SetActive(true);
     }
 }
 
