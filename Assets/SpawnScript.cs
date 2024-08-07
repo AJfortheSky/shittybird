@@ -9,7 +9,7 @@ public class SpawnScript : MonoBehaviour
     public float spawnRate = 2;
     //[FormerlySerializedAs("interval")] 
     public GameObject myPrefab;
-    public float heightOffset = 0.001f;
+    private float heightOffset = 9;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +36,8 @@ public class SpawnScript : MonoBehaviour
     void spawnPipe()
     {
         float lowestPoint = transform.position.y - heightOffset;
-        float highestPoint = transform.position.x + heightOffset;
+        float highestPoint = transform.position.y + heightOffset;
+
 
         Instantiate(myPrefab, new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint), 0), transform.rotation);
     }

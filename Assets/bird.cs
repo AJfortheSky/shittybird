@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class bird : MonoBehaviour
 {
+    public static GameObject Bird;
     public Rigidbody2D myRidgitbody;
-    public float baseVelocity = 10;
+    public float baseVelocity = 40;
+
     
     // Start is called before the first frame update
     void Start()

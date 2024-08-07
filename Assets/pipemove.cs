@@ -6,9 +6,8 @@ public class pipemove : MonoBehaviour
 {
     
     
-    public float movespeed = 5;
-    public float deadzone = -45;
-    public float lifeTime = 5;
+    private float movespeed = 15;
+    private float lifeTime = 10;
     private bool die = false;
     // Start is called before the first frame update
     void Start()
