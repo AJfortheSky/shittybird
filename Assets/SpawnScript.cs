@@ -6,38 +6,40 @@ using UnityEngine.Serialization;
 public class SpawnScript : MonoBehaviour
 {
     private float timer = 0;
+
     public float spawnRate = 2;
+
     //[FormerlySerializedAs("interval")] 
     public GameObject myPrefab;
-    public float heightOffset = 0.001f;
+    private float heightOffset = 9;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         spawnPipe();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (timer < spawnRate)
         {
-            
             timer = timer + Time.deltaTime;
-
-        }else
+        }
+        else
         {
-
             spawnPipe();
             timer = 0;
         }
     }
 
-    void spawnPipe()
+    private void spawnPipe()
     {
-        float lowestPoint = transform.position.y - heightOffset;
-        float highestPoint = transform.position.x + heightOffset;
+        var lowestPoint = transform.position.y - heightOffset;
+        var highestPoint = transform.position.y + heightOffset;
 
-        Instantiate(myPrefab, new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint), 0), transform.rotation);
+
+        Instantiate(myPrefab, new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint), 0),
+            transform.rotation);
     }
 }
