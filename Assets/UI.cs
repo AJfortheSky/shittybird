@@ -5,26 +5,27 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 
-
-public class UI : MonoBehaviour
+namespace UIManager
 {
-    public Text scoreUI;
-    private int score = 0;
-    
-    void Start()
+    public class UI : MonoBehaviour
     {
-        scoreUI.text = $"Score: {score}";
-    }
-    
-    
-    public void updateScore()
-    {
-        score += 1;
-    }
+        public Text scoreUI;
+        private static int score = 0;
 
-    public void gameOver()
-    {
-        
+
+        private void Start()
+        {
+            scoreUI.text = $"Score: {score}";
+        }
+
+
+        public static void updateScore(int amount)
+        {
+            score += amount;
+        }
+
+        public void gameOver()
+        {
+        }
     }
 }
-

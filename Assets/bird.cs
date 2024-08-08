@@ -8,20 +8,15 @@ public class bird : MonoBehaviour
     public Rigidbody2D myRidgitbody;
     public float baseVelocity = 40;
 
-    
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown("space"))
-        {
-            myRidgitbody.velocity = Vector2.up * baseVelocity;
-            
-        }
+        if (Input.GetKeyDown("space")) myRidgitbody.velocity = Vector2.up * baseVelocity;
     }
 }
