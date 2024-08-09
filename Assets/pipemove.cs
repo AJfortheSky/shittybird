@@ -5,7 +5,7 @@ using UnityEngine;
 public class pipemove : MonoBehaviour
 {
     private float movespeed = 15;
-    private float lifeTime = 10;
+    private float lifeTime = 6;
 
     private bool die = false;
 

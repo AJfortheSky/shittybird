@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 377378330}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40.5, y: 2.1, z: 0}
+  m_LocalPosition: {x: 39.9, y: 2.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -280,26 +280,6 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!114 &888635933
---- !u!224 &954998804
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 954998803}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1200856851}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: 93}
-  m_SizeDelta: {x: 702.16, y: 255.75}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &954998805
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -393,13 +373,6 @@ GameObject:
   - component: {fileID: 951867556}
   m_Layer: 0
   m_Name: LogicManager
-  - component: {fileID: 1200856851}
-  - component: {fileID: 1200856850}
-  - component: {fileID: 1200856849}
-  - component: {fileID: 1200856848}
-  - component: {fileID: 1200856847}
-  m_Layer: 5
-  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -419,10 +392,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!4 &951867557
 Transform:
-  scoreUI: {fileID: 1667015665}
-  score: 0
---- !u!114 &1200856848
-MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -438,7 +407,6 @@ MonoBehaviour:
   - {fileID: 1977133132}
   - {fileID: 1583640544}
   - {fileID: 1667015664}
-  - {fileID: 1583640544}
   - {fileID: 954998804}
 =======
   m_Children: []
