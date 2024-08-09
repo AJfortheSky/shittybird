@@ -1,7 +1,7 @@
-
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 
 
@@ -24,7 +24,12 @@ public class UI : MonoBehaviour
         scoreUI.text = $"Score: {_score}";
     }
 
-    public void GameOver()
+
+    public void gameOver()
     {
+        Time.timeScale = 0f;
+        //HighScoreManager.SaveHighScore();
+        //gameOverText.gameObject.SetActive(true);
     }
+    
 }
