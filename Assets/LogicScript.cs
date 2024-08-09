@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 
 public class LogicScript : MonoBehaviour
 {
-    [FormerlySerializedAs("_ui")] [SerializeField] UI ui;
+    [SerializeField] public UImanager ui;
+    
 
     private void Start()
     {
@@ -18,6 +20,6 @@ public class LogicScript : MonoBehaviour
     public void addScore()
     {
         ui.UpdateScore(1);
-        Debug.Log("Sir they hit the second tower");
+        Debug.Log("score updated");
     }
 }

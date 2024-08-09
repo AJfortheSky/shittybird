@@ -7,20 +7,25 @@ public class bird : MonoBehaviour
     public static GameObject Bird;
     public Rigidbody2D myRidgitbody;
     public float baseVelocity = 40;
+    //public UImanager uiScript;
     public LogicScript logic;
-    
 
 
+    // Start is called before the first frame update
+    private void Start()
+    {
 
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "TopKillBox" || other.gameObject.name == "BottomKillBox" || other.GameObject.name == "Pipe (Top)" || otherGameObject.name == "Pipe (Bottom)")
+        if (other.gameObject.name == "TopKillBox" || other.gameObject.name == "BottomKillBox" || other.gameObject.name == "Pipe (Top)" || other.gameObject.name == "Pipe (Bottom)")
         {
-            
+            Debug.Log("ur dead");
         }
-        if (other.CompareTag("Finish"))
+
+        if (other.gameObject.name == "Score Trigger")
         {
-            Debug.Log("Sir they hit the second tower");
+            Debug.Log("adding score");
             logic.addScore();
         }
     }
@@ -28,10 +33,5 @@ public class bird : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown("space")) myRidgitbody.velocity = Vector2.up * baseVelocity;
-        
     }
-    
-    
-    
-
 }
