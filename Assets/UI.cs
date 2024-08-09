@@ -1,31 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
 
-namespace UIManager
+
+
+public class UI : MonoBehaviour
 {
-    public class UI : MonoBehaviour
+    public Text scoreUI;
+    private static int _score;
+
+
+    private void Start()
     {
-        public Text scoreUI;
-        private static int score = 0;
+        scoreUI.text = $"Score: {_score}";
+    }
 
 
-        private void Start()
-        {
-            scoreUI.text = $"Score: {score}";
-        }
+    public void UpdateScore(int amount)
+    {
+        Debug.Log("Updating Score");
+        _score += amount;
+        scoreUI.text = $"Score: {_score}";
+    }
 
-
-        public static void updateScore(int amount)
-        {
-            score += amount;
-        }
-
-        public void gameOver()
-        {
-        }
+    public void GameOver()
+    {
     }
 }
