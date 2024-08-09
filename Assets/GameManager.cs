@@ -6,14 +6,15 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Text startText;
-    public Text gameOverText;
+    public GameObject GameOver;
     private bool isGameFrozen = true;
 
     void Start()
     {
         Time.timeScale = 0f;
         startText.gameObject.SetActive(true); 
-        gameOverText.gameObject.SetActive(false);
+        GameOver.GetComponent<SpriteRenderer>().enabled = false;
+        
     }
 
     void Update()

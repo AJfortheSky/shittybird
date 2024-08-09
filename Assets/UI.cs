@@ -26,6 +26,9 @@ namespace UIManager
 
         public void gameOver()
         {
+            Time.timeScale = 0f;
+            //HighScoreManager.SaveHighScore();
+            //gameOverText.gameObject.SetActive(true);
         }
     }
 }

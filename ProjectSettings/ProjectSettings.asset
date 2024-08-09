@@ -706,11 +706,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 69580623-bb40-493b-a8bb-dfe08479e68e
+  cloudProjectId: 60a0c5dc-a09c-4ac6-9487-2b9041665618
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: shittybird
-  organizationId: dorifto_majster
+  projectName: Shitty Bird
+  organizationId: ajforthesky
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

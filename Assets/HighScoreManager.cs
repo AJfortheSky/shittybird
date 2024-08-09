@@ -15,7 +15,7 @@ public class HighScoreManager : MonoBehaviour
     {
         if (score > highScore)
         {
-            highScore = score;
+            //highScore = score;
             PlayerPrefs.SetInt("HighScore", highScore);
             PlayerPrefs.Save();
         }
@@ -28,11 +28,14 @@ public class HighScoreManager : MonoBehaviour
 
     private void LoadHighScore()
     {
-        
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (PlayerPrefs.HasKey("HighScore"))
+        {
+            highScore = PlayerPrefs.GetInt("HighScore");
+        }
+        else
+        {
+            highScore = 0;
+        }
+
     }
 }
