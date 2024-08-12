@@ -53,7 +53,7 @@ public class Bird : MonoBehaviour
             birdPlayer.transform.Rotate(0f, 0f, -2f);
             
         }
-        if (myRidgitbody.velocity.y < 0 && birdPlayer.transform.rotation.y > 40)
+        if (myRidgitbody.velocity.y > 0 && birdPlayer.transform.rotation.y > 40)
         {
             birdPlayer.transform.Rotate(0f, 0f, 2f);
             

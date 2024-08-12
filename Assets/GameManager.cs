@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Text startText;
+    public Text restart;
     public GameObject GameOver;
     public GameObject start;
     public GameObject dimBg;
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         start.GetComponent<SpriteRenderer>().enabled = true;
+        restart.enabled = false;
         GameOver.GetComponent<SpriteRenderer>().enabled = false;
         GameOver.gameObject.SetActive(false);
         dimBg.GetComponent<SpriteRenderer>().enabled = false;
@@ -28,7 +30,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void UnfreezeGame()
+    public void UnfreezeGame()
     {
         Time.timeScale = 1f; 
         start.gameObject.SetActive(false);

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 
 public class UImanager : MonoBehaviour
@@ -13,7 +13,10 @@ public class UImanager : MonoBehaviour
     public GameObject dimBg;
     //public HighScoreManager HighScore;
     public Text HighScoreUI;
+    public Text restart;
     private int highScore;
+    public GameManager gameManager;
+    private bool restartCheck = false;
 
     private void Start()
     {
@@ -22,6 +25,17 @@ public class UImanager : MonoBehaviour
         HighScoreUI.text = $"High Score: {highScore}";
     }
 
+    void Update()
+    {
+        
+        if (restartCheck && Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Debug.Log("yo");
+            gameManager.UnfreezeGame();
+        }
+        
+    }
 
     public void UpdateScore(int amount)
     {
@@ -43,6 +57,9 @@ public class UImanager : MonoBehaviour
         GameOver.gameObject.SetActive(true);
         GameOver.GetComponent<SpriteRenderer>().enabled = true;
         dimBg.GetComponent<SpriteRenderer>().enabled = true;
+        restart.enabled = true;
+        restartCheck = true;
+        _score = 0;
     }
     
     
