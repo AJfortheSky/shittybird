@@ -39,7 +39,10 @@ public class Bird : MonoBehaviour
 
     private void InputManager()
     {
-        if (Input.GetKeyDown("space")) myRidgitbody.velocity = Vector2.up * baseVelocity;
+        if (Input.GetKeyDown("space"))
+        {
+            myRidgitbody.velocity = Vector2.up * baseVelocity;
+        }
     }
 
     private void RotationManager()

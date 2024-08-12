@@ -33,12 +33,12 @@ public class UImanager : MonoBehaviour
         HighScoreUI.text = $"High Score: {highScore}";
         }
     }
-    }
+    
 
 
     public void gameOver()
     {
-        SaveHighScore(_score);
+        SaveHighScore();
         Time.timeScale = 0f;
         GameOver.gameObject.SetActive(true);
         GameOver.GetComponent<SpriteRenderer>().enabled = true;
@@ -59,7 +59,7 @@ public class UImanager : MonoBehaviour
     {
         return highScore;
     }
-    private void LoadHighScore()
+    public void LoadHighScore()
     {
         if (PlayerPrefs.HasKey("HighScore"))
         {
