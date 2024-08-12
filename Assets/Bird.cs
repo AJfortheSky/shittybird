@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class bird : MonoBehaviour
+public class Bird : MonoBehaviour
 {
-    public static GameObject Bird;
+    public GameObject birdPlayer;
     public Rigidbody2D myRidgitbody;
     public float baseVelocity = 40;
-    //public UImanager uiScript;
     public LogicScript logic;
     public UImanager UI;
 
@@ -32,6 +32,29 @@ public class bird : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        InputManager();
+        RotationManager();
+    }
+
+
+    private void InputManager()
+    {
         if (Input.GetKeyDown("space")) myRidgitbody.velocity = Vector2.up * baseVelocity;
+    }
+
+    private void RotationManager()
+    {
+
+        if (myRidgitbody.velocity.y > 0 && birdPlayer.transform.rotation.y > -40)
+        {
+            birdPlayer.transform.Rotate(0f, 0f, -2f);
+            
+        }
+        if (myRidgitbody.velocity.y < 0 && birdPlayer.transform.rotation.y > 40)
+        {
+            birdPlayer.transform.Rotate(0f, 0f, 2f);
+            
+        }
+
     }
 }
