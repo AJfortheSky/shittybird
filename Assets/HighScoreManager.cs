@@ -5,6 +5,7 @@ using UnityEngine;
 public class HighScoreManager : MonoBehaviour
 {
     private int highScore;
+    public UImanager UI;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,7 @@ public class HighScoreManager : MonoBehaviour
     {
         if (score > highScore)
         {
-            //highScore = score;
+            //highScore = _score();
             PlayerPrefs.SetInt("HighScore", highScore);
             PlayerPrefs.Save();
         }

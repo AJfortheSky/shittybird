@@ -9,7 +9,7 @@ public class bird : MonoBehaviour
     public float baseVelocity = 40;
     //public UImanager uiScript;
     public LogicScript logic;
-
+    public UImanager UI;
 
     // Start is called before the first frame update
     private void Start()
@@ -20,7 +20,7 @@ public class bird : MonoBehaviour
     {
         if (other.gameObject.name == "TopKillBox" || other.gameObject.name == "BottomKillBox" || other.gameObject.name == "Pipe (Top)" || other.gameObject.name == "Pipe (Bottom)")
         {
-            Debug.Log("ur dead");
+            UI.gameOver();
         }
 
         if (other.gameObject.name == "Score Trigger")

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public Text startText;
     public GameObject GameOver;
     public GameObject start;
+    public GameObject dimBg;
     private bool isGameFrozen = true;
 
     void Start()
@@ -15,7 +16,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         start.GetComponent<SpriteRenderer>().enabled = true;
         GameOver.GetComponent<SpriteRenderer>().enabled = false;
-        
+        GameOver.gameObject.SetActive(false);
+        dimBg.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     void Update()
@@ -31,5 +33,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f; 
         start.gameObject.SetActive(false);
         isGameFrozen = false;
+        startText.enabled = false;
     }
 }
