@@ -41,6 +41,7 @@ public class Bird : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
+            Debug.Log("Space pressed");
             myRidgitbody.velocity = Vector2.up * baseVelocity;
         }
     }
