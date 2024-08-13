@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
     public GameObject start;
     public GameObject dimBg;
     private bool isGameFrozen = true;
-
+    public GameObject pauseBg;
+    public GameObject pauseIcon;
     void Start()
     {
         Time.timeScale = 0f;
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour
         GameOver.GetComponent<SpriteRenderer>().enabled = false;
         GameOver.gameObject.SetActive(false);
         dimBg.GetComponent<SpriteRenderer>().enabled = false;
+        pauseBg.GetComponent<SpriteRenderer>().enabled = false;
+        pauseIcon.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     void Update()

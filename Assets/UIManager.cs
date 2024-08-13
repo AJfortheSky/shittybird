@@ -17,6 +17,10 @@ public class UImanager : MonoBehaviour
     private int highScore;
     public GameManager gameManager;
     private bool restartCheck = false;
+    private bool pauseCheck = true;
+    public GameObject pauseBg;
+    public GameObject pauseIcon;
+
 
     private void Start()
     {
@@ -30,11 +34,12 @@ public class UImanager : MonoBehaviour
         
         if (restartCheck && Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            Debug.Log("yo");
-            gameManager.UnfreezeGame();
+            restartGame();
         }
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseGame();
+        }
     }
 
     public void UpdateScore(int amount)
@@ -48,7 +53,27 @@ public class UImanager : MonoBehaviour
         }
     }
     
-
+    public void PauseGame()
+    {
+        if(pauseCheck && restartCheck == false)
+        {
+            Time.timeScale = 0f;
+            pauseBg.GetComponent<SpriteRenderer>().enabled = true;
+            pauseIcon.GetComponent<SpriteRenderer>().enabled = true;
+            pauseCheck = false;
+        }
+        else if (restartCheck)
+        {
+            
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            pauseBg.GetComponent<SpriteRenderer>().enabled = false;
+            pauseIcon.GetComponent<SpriteRenderer>().enabled = false;
+            pauseCheck = true;
+        }
+    }
 
     public void gameOver()
     {
@@ -62,6 +87,11 @@ public class UImanager : MonoBehaviour
         _score = 0;
     }
     
+    public void restartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        gameManager.UnfreezeGame();
+    }
     
     private void SaveHighScore()
     {

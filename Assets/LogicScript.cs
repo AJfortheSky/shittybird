@@ -10,7 +10,8 @@ using UnityEngine.UI;
 public class LogicScript : MonoBehaviour
 {
     [SerializeField] public UImanager ui;
-    
+    public pipemove pipeSpeed;
+
 
     private void Start()
     {
@@ -20,6 +21,7 @@ public class LogicScript : MonoBehaviour
     public void addScore()
     {
         ui.UpdateScore(1);
+        //pipeSpeed.increaseSpeed();
         Debug.Log("score updated");
     }
 }

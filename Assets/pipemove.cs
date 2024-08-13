@@ -23,5 +23,13 @@ public class pipemove : MonoBehaviour
 
         if (lifeTime <= 0) die = true;
         if (die == true) DestroyImmediate(gameObject, true);
+  
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.name == "Score Trigger")
+        {
+            movespeed=+10;
+        }
     }
 }
