@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public class LogicScript : MonoBehaviour
 {
     [SerializeField] public UImanager ui;
-    public pipemove pipeSpeed;
+    public Pipemove pipeSpeed;
 
 
     private void Start()

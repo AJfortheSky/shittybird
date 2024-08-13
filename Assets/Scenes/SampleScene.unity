@@ -247,6 +247,7 @@ RectTransform:
   - {fileID: 1605737916}
   - {fileID: 2057863251}
   - {fileID: 1572137090}
+  - {fileID: 49745579}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -693,10 +694,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   birdPlayer: {fileID: 693220742}
-  myRidgitbody: {fileID: 693220744}
+  myRigidbody2D: {fileID: 693220744}
   baseVelocity: 23
   logic: {fileID: 1783123227}
-  UI: {fileID: 2055055303}
+  ui: {fileID: 2055055303}
+  pipe: {fileID: 7482401776510587805, guid: 014519bf1df1e9244942d9d82e77c525, type: 3}
 --- !u!50 &693220744
 Rigidbody2D:
   serializedVersion: 4
@@ -1836,7 +1838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aud: {fileID: 1605737921}
-  muteToggle: {fileID: 0}
+  muteToggle: {fileID: 1605737917}
   muteSvg: {fileID: 21300000, guid: 2bb76f6ad6eb5a84282689c89aea43e6, type: 3}
   unmuteSvg: {fileID: 21300000, guid: b1e1ffbf41742c24d9058c65afa5c1a8, type: 3}
   isMute: 0
@@ -2113,6 +2115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2055055304}
   - component: {fileID: 2055055303}
+  - component: {fileID: 2055055305}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -2155,6 +2158,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2055055305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055055302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9e200a274ab4e40996a1fb8f9ab752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultMovespeed: 15
+  score: 1
 --- !u!1 &2057863250
 GameObject:
   m_ObjectHideFlags: 0

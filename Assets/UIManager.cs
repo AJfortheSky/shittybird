@@ -24,6 +24,7 @@ public class UImanager : MonoBehaviour
 
     private void Start()
     {
+        
         LoadHighScore();
         scoreUI.text = $"Score: {_score}";
         HighScoreUI.text = $"High Score: {highScore}";

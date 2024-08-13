@@ -1,35 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class pipemove : MonoBehaviour
-{
-    private float movespeed = 15;
-    private float lifeTime = 6;
+public class Pipemove : MonoBehaviour
+{   [FormerlySerializedAs("movespeed")] [SerializeField]
+    public int defaultMovespeed = 15;
+    private float _lifeTime = 6;
+    public int score = 1;
+    private bool _die;
 
-    private bool die = false;
 
-    // Start is called before the first frame update
-    private void Start()
-    {
-    }
 
     // Update is called once per frame
     private void Update()
     {
-        transform.position += Vector3.left * (movespeed * Time.deltaTime);
+        transform.position += Vector3.left * (float)(_calc_movespeed(score: score, defaultMovespeed) * Time.deltaTime);
 
-        lifeTime -= Time.deltaTime;
+        _lifeTime -= Time.deltaTime;
 
-        if (lifeTime <= 0) die = true;
-        if (die == true) DestroyImmediate(gameObject, true);
-  
+        if (_lifeTime <= 0) _die = true;
+        if (_die) DestroyImmediate(gameObject, true);
+
+        
+
     }
-    void OnTriggerEnter2D(Collider2D other)
+
+    public void trackScore()
     {
-        if (other.gameObject.name == "Score Trigger")
-        {
-            movespeed=+10;
-        }
+        score += 1;
+    }
+
+    private double _calc_movespeed(int score, int defMoveSpeed)
+    {
+        return score * 0.5 + defMoveSpeed;
     }
 }
